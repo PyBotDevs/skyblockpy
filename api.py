@@ -13,21 +13,25 @@ class Skyblock:
         return api_request.text
     
     # API Retrieval Commands
-    def get_auctions(self, *, player_name: str = None):
+    def get_auctions(self, *, page: int = 0):
         """
         Returns a `dict` of the 1000 latest auctions in Skyblock.
         
         Optional args:
-        * `player_name`: Shows auctions only from that player.
+        * `page`: View a specific page of auctions.
         """
-        if player_name is not None:
-            player_uuid = self.get_uuid(player_name)
-            api_request = requests.get(f"https://api.hypixel.net/skyblock/auction?key={self.api_key}&player={player_uuid}")
-            return api_request.text
-        else:
-            api_request = requests.get(f"https://api.hypixel.net/skyblock/auctions?key={self.api_key}")
-            auctions = json.loads(api_request)
-            return auctions
+        api_request = requests.get(f"https://api.hypixel.net/skyblock/auctions?key={self.api_key}&page={page}")
+        auctions = json.loads(api_request)
+        return auctions
+    
+    def get_player_auctions(self, player_name: str):
+        """
+        Returns a `dict` of all Skyblock auctions from a particular player.
+        """
+        player_uuid = self.get_uuid(player_name)
+        api_request = requests.get(f"https://api.hypixel.net/skyblock/auction?key={self.api_key}&player={player_uuid}")
+        player_auctions = json.loads(api_request)
+        return player_auctions
     
     def get_news(self):
         """
