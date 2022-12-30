@@ -6,4 +6,13 @@ SkyblockPy is a simple Python API wrapper which is used to communicate and fetch
 It is based on the Python requests library, which makes it very simple to develop for and fix issues.
 
 ### How do I use SkyblockPy?
-SkyblockPy works by communicating with the Hypixel API endpoints by using your **API key**.
+SkyblockPy works by communicating with the Hypixel API endpoints by using your **API key**. 
+
+If no errors are returned by the API endpoint (status code 200 is returned), then the API output is returned as a `dict`.
+
+### I found a bug/I want to add a missing feature!
+Just make a new issue [here](https://github.com/PyBotDevs/skyblockpy/issues/new) and describe the bug/feature.
+
+<hr>
+
+### Hypixel API Documentation is given here: https://api.hypixel.net/#section/Introduction
