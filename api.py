@@ -57,3 +57,19 @@ class Skyblock:
         api_request = requests.get(f"https://api.hypixel.net/skyblock/profiles?key={self.api_key}&uuid={player_uuid}")
         player_profile_data = json.loads(api_request)
         return player_profile_data
+    
+    def get_collections(self):
+        """
+        Returns a `dict` of information related to Skyblock Collections.
+        """
+        api_request = requests.get("https://api.hypixel.net/resources/skyblock/collections")
+        collections_data = json.loads(api_request)
+        return collections_data
+    
+    def get_skills(self):
+        """
+        Returns a `dict` of information related to Skyblock Skills.
+        """
+        api_request = requests.get("https://api.hypixel.net/resources/skyblock/skills")
+        collections_data = json.loads(api_request)
+        return collections_data
