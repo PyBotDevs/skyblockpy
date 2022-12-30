@@ -10,17 +10,18 @@ class Skyblock:
     
     def get_uuid(self, player_name: str) -> str:
         api_request = requests.get(f"https://api.mojang.com/users/profiles/minecraft/{player_name}")
-        return api_request.text
+        content = json.loads(api_request.content)
+        return content["id"]
     
     # API Retrieval Commands
-    def get_auctions(self, *, page: int = 0):
+    def get_auctions(self, page: int = 0):
         """
         Returns a `dict` of the 1000 latest auctions in Skyblock.
         
         Optional args:
         * `page`: View a specific page of auctions.
         """
-        api_request = requests.get(f"https://api.hypixel.net/skyblock/auctions?key={self.api_key}&page={page}")
+        api_request = requests.get(f"https://api.hypixel.net/skyblock/auctions?key={self.api_key}&page={page}").content
         auctions = json.loads(api_request)
         return auctions
     
@@ -29,7 +30,7 @@ class Skyblock:
         Returns a `dict` of all Skyblock auctions from a particular player.
         """
         player_uuid = self.get_uuid(player_name)
-        api_request = requests.get(f"https://api.hypixel.net/skyblock/auction?key={self.api_key}&player={player_uuid}")
+        api_request = requests.get(f"https://api.hypixel.net/skyblock/auction?key={self.api_key}&player={player_uuid}").content
         player_auctions = json.loads(api_request)
         return player_auctions
     
@@ -37,7 +38,7 @@ class Skyblock:
         """
         Returns a `dict` of the latest Skyblock news from Hypixel.
         """
-        api_request = requests.get(f"https://api.hypixel.net/skyblock/news?key={self.api_key}")
+        api_request = requests.get(f"https://api.hypixel.net/skyblock/news?key={self.api_key}").content
         news = json.loads(api_request)
         return news
 
@@ -45,7 +46,7 @@ class Skyblock:
         """
         Returns a `dict` of Skyblock bazaar data.
         """
-        api_request = requests.get(f"https://api.hypixel.net/skyblock/bazaar?key={self.api_key}")
+        api_request = requests.get(f"https://api.hypixel.net/skyblock/bazaar?key={self.api_key}").content
         bazaar_data = json.loads(api_request)
         return bazaar_data
     
@@ -54,7 +55,7 @@ class Skyblock:
         Returns a `dict` of profile data on a player.
         """
         player_uuid = self.get_uuid(player_name)
-        api_request = requests.get(f"https://api.hypixel.net/skyblock/profiles?key={self.api_key}&uuid={player_uuid}")
+        api_request = requests.get(f"https://api.hypixel.net/skyblock/profiles?key={self.api_key}&uuid={player_uuid}").content
         player_profile_data = json.loads(api_request)
         return player_profile_data
     
@@ -62,7 +63,7 @@ class Skyblock:
         """
         Returns a `dict` of information related to Skyblock Collections.
         """
-        api_request = requests.get("https://api.hypixel.net/resources/skyblock/collections")
+        api_request = requests.get("https://api.hypixel.net/resources/skyblock/collections").content
         collections_data = json.loads(api_request)
         return collections_data
     
@@ -70,6 +71,6 @@ class Skyblock:
         """
         Returns a `dict` of information related to Skyblock Skills.
         """
-        api_request = requests.get("https://api.hypixel.net/resources/skyblock/skills")
+        api_request = requests.get("https://api.hypixel.net/resources/skyblock/skills").content
         collections_data = json.loads(api_request)
         return collections_data
