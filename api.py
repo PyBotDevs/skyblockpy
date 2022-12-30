@@ -1,7 +1,9 @@
 """Used for accessing the Skyblock API."""
+# Imports
 import requests
 import json
 
+# Functions
 class Skyblock:
     def __init__(self, api_key: str):
         self.api_key = api_key
@@ -10,7 +12,7 @@ class Skyblock:
         api_request = requests.get(f"https://api.mojang.com/users/profiles/minecraft/{player_name}")
         return api_request.text
     
-    # Make API retrieval commands here
+    # API Retrieval Commands
     def get_auctions(self, *, player_name: str = None):
         """
         Returns a `dict` of the 1000 latest auctions in Skyblock.
