@@ -14,7 +14,7 @@ class Skyblock:
         return content["id"]
     
     # API Retrieval Commands
-    def get_auctions(self, page: int = 0):
+    def get_auctions(self, page: int = 0) -> dict:
         """
         Returns a `dict` of the 1000 latest auctions in Skyblock.
         
@@ -25,7 +25,7 @@ class Skyblock:
         auctions = json.loads(api_request)
         return auctions
     
-    def get_player_auctions(self, player_name: str):
+    def get_player_auctions(self, player_name: str) -> dict:
         """
         Returns a `dict` of all Skyblock auctions from a particular player.
         """
@@ -34,7 +34,7 @@ class Skyblock:
         player_auctions = json.loads(api_request)
         return player_auctions
     
-    def get_news(self):
+    def get_news(self) -> dict:
         """
         Returns a `dict` of the latest Skyblock news from Hypixel.
         """
@@ -42,7 +42,7 @@ class Skyblock:
         news = json.loads(api_request)
         return news
 
-    def get_bazaar_data(self):
+    def get_bazaar_data(self) -> dict:
         """
         Returns a `dict` of Skyblock bazaar data.
         """
@@ -50,7 +50,7 @@ class Skyblock:
         bazaar_data = json.loads(api_request)
         return bazaar_data
     
-    def get_player_profile(self, player_name: str):
+    def get_player_profile(self, player_name: str) -> dict:
         """
         Returns a `dict` of profile data on a player.
         """
@@ -59,7 +59,7 @@ class Skyblock:
         player_profile_data = json.loads(api_request)
         return player_profile_data
     
-    def get_collections(self):
+    def get_collections(self) -> dict:
         """
         Returns a `dict` of information related to Skyblock Collections.
         """
@@ -67,7 +67,7 @@ class Skyblock:
         collections_data = json.loads(api_request)
         return collections_data
     
-    def get_skills(self):
+    def get_skills(self) -> dict:
         """
         Returns a `dict` of information related to Skyblock Skills.
         """
@@ -75,7 +75,7 @@ class Skyblock:
         collections_data = json.loads(api_request)
         return collections_data
     
-    def get_items(self):
+    def get_items(self) -> dict:
         """
         Returns a `dict` of information related to Skyblock items.
         """
@@ -83,7 +83,7 @@ class Skyblock:
         items_data = json.loads(api_request)
         return items_data
 
-    def get_mayor_information(self):
+    def get_mayor_information(self) -> dict:
         """
         Returns a `dict` of information regarding the current mayor in Skyblock.
         """
@@ -92,7 +92,7 @@ class Skyblock:
         del mayor_info["current"]
         return mayor_info
     
-    def get_current_election(self):
+    def get_current_election(self) -> dict:
         """
         Returns a `dict` of information regarding the current election in Skyblock.
         """
