@@ -1,6 +1,6 @@
 <h1 align='center'>SkyblockPy, a simple Python API wrapper for the Hypixel Skyblock API.</h1>
 
-[![CodeFactor](https://www.codefactor.io/repository/github/pybotdevs/skyblockpy/badge)](https://www.codefactor.io/repository/github/skyblockpy/isobot)
+[![CodeFactor](https://www.codefactor.io/repository/github/pybotdevs/skyblockpy/badge)](https://www.codefactor.io/repository/github/pybotdevs/skyblockpy)
 
 
 ### What is SkyblockPy?
