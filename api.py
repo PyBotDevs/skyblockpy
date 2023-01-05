@@ -34,6 +34,14 @@ class Skyblock:
         player_auctions = json.loads(api_request)
         return player_auctions
     
+    def get_recently_ended_auctions(self) -> dict:
+        """
+        Returns a `dict` of all the auctions that have recently ended within 60 seconds.
+        """
+        api_request = requests.get("https://api.hypixel.net/skyblock/auctions_ended").content
+        recently_ended_auctions = json.loads(api_request)
+        return recently_ended_auctions
+    
     def get_news(self) -> dict:
         """
         Returns a `dict` of the latest Skyblock news from Hypixel.
