@@ -100,3 +100,11 @@ class Skyblock:
         election_info = json.loads(api_request)
         del election_info["mayor"]
         return election_info
+
+    def get_bingo_event(self) -> dict:
+        """
+        Returns a `dict` of information regarding the current bingo event and goals in Skyblock.
+        """
+        api_request = requests.get("https://api.hypixel.net/resources/skyblock/bingo").content
+        bingo_data = json.loads(api_request)
+        return bingo_data
