@@ -1,5 +1,7 @@
 <h1 align='center'>SkyblockPy, a simple Python API wrapper for the Hypixel Skyblock API.</h1>
 
+[![CodeFactor](https://www.codefactor.io/repository/github/pybotdevs/skyblockpy/badge)](https://www.codefactor.io/repository/github/skyblockpy/isobot)
+
 
 ### What is SkyblockPy?
 SkyblockPy is a simple Python API wrapper which is used to communicate and fetch data from the Hypixel Skyblock API endpoints.
