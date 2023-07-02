@@ -183,3 +183,9 @@ class Skyblock:
         api_request = requests.get(f"https://api.hypixel.net/boosters?key={self.api_key}").content
         boosters_data = parse(api_request)
         return boosters_data
+
+    def get_current_player_counts(self):
+        """Returns a `dict` of the current player counts for all game modes."""
+        api_request = requests.get(f"https://api.hypixel.net/counts?key={self.api_key}").content
+        player_count_data = parse(api_request)
+        return player_count_data
