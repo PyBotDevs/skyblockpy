@@ -14,6 +14,13 @@ class Skyblock:
         return content["id"]
     
     # API Retrieval Commands
+    def get_player_info(self, player_name: str) -> dict:
+        """Fetches data of a specific player, including game stats."""
+        player_uuid = self.get_uuid(player_name)
+        api_request = requests.get(f"https://api.hypixel.net/player?key={self.api_key}&uuid={player_uuid}").content
+        player_data = json.loads(api_request)
+        return player_data
+
     def get_auctions(self, page: int = 0) -> dict:
         """
         Returns a `dict` of the 1000 latest auctions in Skyblock.
