@@ -21,6 +21,13 @@ class Skyblock:
         player_data = parse(api_request)
         return player_data
 
+    def get_guild_info(self, player_name: str) -> dict:
+        """Retrieve a guild by a player."""
+        player_uuid = self.get_uuid(player_name)
+        api_request = requests.get(f"https://api.hypixel.net/guild?key={self.api_key}&player={player_uuid}").content
+        guild_data = parse(api_request)
+        return guild_data
+
     def get_auctions(self, page: int = 0) -> dict:
         """
         Returns a `dict` of the 1000 latest auctions in Skyblock.
