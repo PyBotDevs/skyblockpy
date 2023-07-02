@@ -39,6 +39,13 @@ class Skyblock:
         player_data = parse(api_request)
         return player_data
 
+    def get_player_status(self, player_name: str) -> dict:
+        """Fetches the current online status of a specific player."""
+        player_uuid = self.get_uuid(player_name)
+        api_request = requests.get(f"https://api.hypixel.net/status?key={self.api_key}&uuid={player_uuid}").content
+        player_data = parse(api_request)
+        return player_data
+
     def get_player_auctions(self, player_name: str) -> dict:
         """Returns a `dict` of all Skyblock auctions from a particular player."""
         player_uuid = self.get_uuid(player_name)
