@@ -177,3 +177,27 @@ class Skyblock:
         api_request = requests.get("https://api.hypixel.net/resources/skyblock/bingo").content
         bingo_data = parse(api_request)
         return bingo_data
+    
+    def get_active_network_boosters(self):
+        """Returns a `dict` of all of the active network boosters."""
+        api_request = requests.get(f"https://api.hypixel.net/boosters?key={self.api_key}").content
+        boosters_data = parse(api_request)
+        return boosters_data
+
+    def get_current_player_counts(self):
+        """Returns a `dict` of the current player counts for all game modes."""
+        api_request = requests.get(f"https://api.hypixel.net/counts?key={self.api_key}").content
+        player_count_data = parse(api_request)
+        return player_count_data
+
+    def get_current_leaderboards(self):
+        """Returns a `dict` of the current Hypixel leaderboards."""
+        api_request = requests.get(f"https://api.hypixel.net/leaderboards?key={self.api_key}").content
+        leaderboards_data = parse(api_request)
+        return leaderboards_data
+
+    def get_punishment_statistics(self):
+        """Returns a `dict` of Hypixel's punishment statistics."""
+        api_request = requests.get(f"https://api.hypixel.net/punishmentstats?key={self.api_key}").content
+        punishment_stats_data = parse(api_request)
+        return punishment_stats_data
