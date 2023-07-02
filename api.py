@@ -177,3 +177,9 @@ class Skyblock:
         api_request = requests.get("https://api.hypixel.net/resources/skyblock/bingo").content
         bingo_data = parse(api_request)
         return bingo_data
+    
+    def get_active_network_boosters(self):
+        """Returns a `dict` of all of the active network boosters."""
+        api_request = requests.get(f"https://api.hypixel.net/boosters?key={self.api_key}").content
+        boosters_data = parse(api_request)
+        return boosters_data
