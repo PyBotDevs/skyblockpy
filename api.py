@@ -44,6 +44,48 @@ class Skyblock:
         api_request = requests.get("https://api.hypixel.net/skyblock/auctions_ended").content
         recently_ended_auctions = parse(api_request)
         return recently_ended_auctions
+
+    def get_game_info(self) -> dict:
+        """Returns information about Hypixel Games."""
+        api_request = requests.get("https://api.hypixel.net/resources/games").content
+        games_info = parse(api_request)
+        return games_info
+
+    def get_achievements(self) -> dict:
+        """Returns a `dict` of all Hypixel achievements."""
+        api_request = requests.get("https://api.hypixel.net/resources/achievements").content
+        games_info = parse(api_request)
+        return games_info
+
+    def get_challenges(self) -> dict:
+        """Returns a `dict` of all Hypixel challenges."""
+        api_request = requests.get("https://api.hypixel.net/resources/challenges").content
+        games_info = parse(api_request)
+        return games_info
+
+    def get_quests(self) -> dict:
+        """Returns a `dict` of all Hypixel quests."""
+        api_request = requests.get("https://api.hypixel.net/resources/quests").content
+        games_info = parse(api_request)
+        return games_info
+
+    def get_guild_achievements(self) -> dict:
+        """Returns a `dict` of all Hypixel Guild achievements."""
+        api_request = requests.get("https://api.hypixel.net/resources/guilds/achievements").content
+        games_info = parse(api_request)
+        return games_info
+
+    def get_vanity_pets(self) -> dict:
+        """Returns a `dict` of all Hypixel vanity pets."""
+        api_request = requests.get("https://api.hypixel.net/resources/vanity/pets").content
+        games_info = parse(api_request)
+        return games_info
+
+    def get_vanity_companions(self) -> dict:
+        """Returns a `dict` of all Hypixel vanity companions."""
+        api_request = requests.get("https://api.hypixel.net/resources/vanity/companions").content
+        games_info = parse(api_request)
+        return games_info
     
     def get_news(self) -> dict:
         """Returns a `dict` of the latest Skyblock news from Hypixel."""
