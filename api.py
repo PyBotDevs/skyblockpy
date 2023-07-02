@@ -189,3 +189,9 @@ class Skyblock:
         api_request = requests.get(f"https://api.hypixel.net/counts?key={self.api_key}").content
         player_count_data = parse(api_request)
         return player_count_data
+
+    def get_current_leaderboards(self):
+        """Returns a `dict` of the current Hypixel leaderboards."""
+        api_request = requests.get(f"https://api.hypixel.net/leaderboards?key={self.api_key}").content
+        leaderboards_data = parse(api_request)
+        return leaderboards_data
