@@ -134,6 +134,12 @@ class Skyblock:
         player_bingo_data = parse(api_request)
         return player_bingo_data
     
+    def get_firesales(self) -> dict:
+        """Returns a `dict` of all currently active or upcoming Fire Sales for Skyblock."""
+        api_request = requests.get("https://api.hypixel.net/resources/skyblock/firesales").content
+        firesales_data = parse(api_request)
+        return firesales_data
+    
     def get_collections(self) -> dict:
         """Returns a `dict` of information related to Skyblock Collections."""
         api_request = requests.get("https://api.hypixel.net/resources/skyblock/collections").content
