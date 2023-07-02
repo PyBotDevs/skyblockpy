@@ -195,3 +195,9 @@ class Skyblock:
         api_request = requests.get(f"https://api.hypixel.net/leaderboards?key={self.api_key}").content
         leaderboards_data = parse(api_request)
         return leaderboards_data
+
+    def get_punishment_statistics(self):
+        """Returns a `dict` of Hypixel's punishment statistics."""
+        api_request = requests.get(f"https://api.hypixel.net/punishmentstats?key={self.api_key}").content
+        punishment_stats_data = parse(api_request)
+        return punishment_stats_data
