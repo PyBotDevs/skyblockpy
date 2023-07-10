@@ -7,12 +7,12 @@ from json import loads as parse
 class Skyblock:
     def __init__(self, api_key: str):
         self.api_key = api_key
-    
+
     def get_uuid(self, player_name: str) -> str:
         api_request = requests.get(f"https://api.mojang.com/users/profiles/minecraft/{player_name}")
         content = parse(api_request.content)
         return content["id"]
-    
+
     # API Retrieval Commands
     def get_player_info(self, player_name: str) -> dict:
         """Fetches data of a specific player, including game stats."""
@@ -38,7 +38,7 @@ class Skyblock:
         api_request = requests.get(f"https://api.hypixel.net/skyblock/auctions?key={self.api_key}&page={page}").content
         auctions = parse(api_request)
         return auctions
-    
+
     def get_recentgames(self, player_name: str) -> dict:
         """Fetches the recently played games of a specific player."""
         player_uuid = self.get_uuid(player_name)
@@ -59,7 +59,7 @@ class Skyblock:
         api_request = requests.get(f"https://api.hypixel.net/skyblock/auction?key={self.api_key}&player={player_uuid}").content
         player_auctions = parse(api_request)
         return player_auctions
-    
+
     def get_recently_ended_auctions(self) -> dict:
         """Returns a `dict` of all the auctions that have recently ended within 60 seconds."""
         api_request = requests.get("https://api.hypixel.net/skyblock/auctions_ended").content
@@ -107,7 +107,7 @@ class Skyblock:
         api_request = requests.get("https://api.hypixel.net/resources/vanity/companions").content
         games_info = parse(api_request)
         return games_info
-    
+
     def get_news(self) -> dict:
         """Returns a `dict` of the latest Skyblock news from Hypixel."""
         api_request = requests.get(f"https://api.hypixel.net/skyblock/news?key={self.api_key}").content
@@ -119,39 +119,39 @@ class Skyblock:
         api_request = requests.get(f"https://api.hypixel.net/skyblock/bazaar?key={self.api_key}").content
         bazaar_data = parse(api_request)
         return bazaar_data
-    
+
     def get_player_profile(self, player_name: str) -> dict:
         """Returns a `dict` of profile data on a player."""
         player_uuid = self.get_uuid(player_name)
         api_request = requests.get(f"https://api.hypixel.net/skyblock/profiles?key={self.api_key}&uuid={player_uuid}").content
         player_profile_data = parse(api_request)
         return player_profile_data
-    
+
     def get_player_bingo_data(self, player_name: str) -> dict:
         """Returns a `dict` of Bingo data for parcitipated events of the provided player."""
         player_uuid = self.get_uuid(player_name)
         api_request = requests.get(f"https://api.hypixel.net/skyblock/bingo?key={self.api_key}&uuid={player_uuid}").content
         player_bingo_data = parse(api_request)
         return player_bingo_data
-    
+
     def get_firesales(self) -> dict:
         """Returns a `dict` of all currently active or upcoming Fire Sales for Skyblock."""
         api_request = requests.get("https://api.hypixel.net/resources/skyblock/firesales").content
         firesales_data = parse(api_request)
         return firesales_data
-    
+
     def get_collections(self) -> dict:
         """Returns a `dict` of information related to Skyblock Collections."""
         api_request = requests.get("https://api.hypixel.net/resources/skyblock/collections").content
         collections_data = parse(api_request)
         return collections_data
-    
+
     def get_skills(self) -> dict:
         """Returns a `dict` of information related to Skyblock Skills."""
         api_request = requests.get("https://api.hypixel.net/resources/skyblock/skills").content
         collections_data = parse(api_request)
         return collections_data
-    
+
     def get_items(self) -> dict:
         """Returns a `dict` of information related to Skyblock items."""
         api_request = requests.get("https://api.hypixel.net/resources/skyblock/items").content
@@ -164,7 +164,7 @@ class Skyblock:
         mayor_info = parse(api_request)
         del mayor_info["current"]
         return mayor_info
-    
+
     def get_current_election(self) -> dict:
         """Returns a `dict` of information regarding the current election in Skyblock."""
         api_request = requests.get("https://api.hypixel.net/resources/skyblock/election").content
@@ -177,7 +177,7 @@ class Skyblock:
         api_request = requests.get("https://api.hypixel.net/resources/skyblock/bingo").content
         bingo_data = parse(api_request)
         return bingo_data
-    
+
     def get_active_network_boosters(self):
         """Returns a `dict` of all of the active network boosters."""
         api_request = requests.get(f"https://api.hypixel.net/boosters?key={self.api_key}").content
