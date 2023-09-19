@@ -9,6 +9,7 @@ class Skyblock:
         self.api_key = api_key
     
     def get_uuid(self, player_name: str) -> str:
+        """Fetches the UUID of a player based on their username."""
         api_request = requests.get(f"https://api.mojang.com/users/profiles/minecraft/{player_name}")
         content = parse(api_request.content)
         return content["id"]
