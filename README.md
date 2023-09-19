@@ -20,4 +20,4 @@ Just make a new issue [here](https://github.com/PyBotDevs/skyblockpy/issues/new)
 
 <hr>
 
-### Hypixel API Documentation is given here: https://api.hypixel.net/#section/Introduction
+### Hypixel API Documentation is given here: https://api.hypixel.net/
