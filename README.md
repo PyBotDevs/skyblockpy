@@ -3,6 +3,7 @@
 [![CodeFactor](https://www.codefactor.io/repository/github/pybotdevs/skyblockpy/badge)](https://www.codefactor.io/repository/github/pybotdevs/skyblockpy)
 
 
+## About
 ### What is SkyblockPy?
 SkyblockPy is a simple Python API wrapper which is used to communicate and fetch data from the Hypixel Skyblock API endpoints.
 It is based on the Python requests library, which makes it very simple to develop for and fix issues.
@@ -12,11 +13,9 @@ SkyblockPy works by communicating with the Hypixel API endpoints by using your *
 
 If no errors are returned by the API endpoint (status code 200 is returned), then the API output is returned as a `dict`.
 
+## Setup and Usage
 ### Obtaining an API key
 Go to the Hypixel Minecraft Java server and use `/api` command.
-
-### I found a bug/I want to add a missing feature!
-Just make a new issue [here](https://github.com/PyBotDevs/skyblockpy/issues/new) and describe the bug/feature.
 
 ### Example Implementation of SkyblockPy
 Here's an example snippet of retrieving the third page of the latest Skyblock auctions.
@@ -32,6 +31,10 @@ def latest_auctions_raw() -> dict:  # Make a function for returning API output, 
 
 latest_auctions_raw()  # Run the actual function now.
 ```
+
+## Extra
+### I found a bug/I want to add a missing feature!
+Just make a new issue [here](https://github.com/PyBotDevs/skyblockpy/issues/new) and describe the bug/feature.
 
 <hr>
 
