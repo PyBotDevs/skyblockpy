@@ -26,7 +26,7 @@ import skyblockpy
 skyblock = skyblockpy.Skyblock("api_key")  # Initialize the Skyblock class with a prospective Hypixel API key.
 
 def latest_auctions_raw() -> dict:  # Make a function for returning API output, and highlight return output type as dict.
-    output = skyblock.get_auctions(page=3)  # Gets the API response.
+    output = skyblock.get_auctions(page=3)  # Gets the API response, and returns the third page of contents.
     return output
 
 latest_auctions_raw()  # Run the actual function now.
