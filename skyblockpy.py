@@ -1,10 +1,15 @@
-"""Used for accessing the Skyblock API."""
+"""
+### A simple API wrapper for Hypixel Skyblock.
+
+(c) 2023-present NKA Development Organization
+"""
 # Imports
 import requests
 from json import loads as parse
 
 # Functions
 class Skyblock:
+    """Used for accessing the Skyblock API."""
     def __init__(self, api_key: str):
         self.api_key = api_key
 
