@@ -137,7 +137,7 @@ class Skyblock:
 
     def get_firesales(self) -> dict:
         """Returns a `dict` of all currently active or upcoming Fire Sales for Skyblock."""
-        api_request = requests.get("https://api.hypixel.net/resources/skyblock/firesales").content
+        api_request = requests.get("https://api.hypixel.net/skyblock/firesales").content
         firesales_data = parse(api_request)
         return firesales_data
 
