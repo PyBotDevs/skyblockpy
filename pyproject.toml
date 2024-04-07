@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "skyblockpy"
-version = "v2023.702.0"
+version = "v2024.407.0"
 description = "A simple Python API wrapper for the Hypixel Skyblock API."
 authors = ["snipe <72265661+notsniped@users.noreply.github.com>"]
 license = "GPL-3.0"
