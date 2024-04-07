@@ -32,6 +32,20 @@ def latest_auctions_raw() -> dict:  # Make a function for returning API output, 
 latest_auctions_raw()  # Run the actual function now.
 ```
 
+Here's another example snippet on getting information on a player in Hypixel.
+
+```py
+import skyblockpy
+
+skyblock = skyblockpy.Skyblock("api_key")  # Initialize the Skyblock class with a prospective Hypixel API key.
+
+def get_player_info() -> dict:  # Make a function for returning API output, and highlight return output type as dict.
+    output = skyblock.get_player_info("notsniped")  # Gets an API response on player info for a user "notsniped".
+    return output
+
+get_player_info()  # Run the actual function.
+```
+
 ## Extra
 ### I found a bug/I want to add a missing feature!
 Just make a new issue [here](https://github.com/PyBotDevs/skyblockpy/issues/new) and describe the bug/feature.
