@@ -18,6 +18,21 @@ Go to the Hypixel Minecraft Java server and use `/api` command.
 ### I found a bug/I want to add a missing feature!
 Just make a new issue [here](https://github.com/PyBotDevs/skyblockpy/issues/new) and describe the bug/feature.
 
+### Example Implementation of SkyblockPy
+Here's an example snippet of retrieving the third page of the latest Skyblock auctions.
+
+```py
+import skyblockpy
+
+skyblock = skyblockpy.Skyblock("api_key")  # Initialize the Skyblock class with a prospective Hypixel API key.
+
+def latest_auctions_raw() -> dict:  # Make a function for returning API output, and highlight return output type as dict.
+    output = skyblock.get_auctions(page=3)  # Gets the API response.
+    return output
+
+latest_auctions_raw()  # Run the actual function now.
+```
+
 <hr>
 
 ### Hypixel API Documentation is given here: https://api.hypixel.net/
